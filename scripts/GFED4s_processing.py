@@ -265,7 +265,7 @@ class GFED4s(Inventory):
         lat, lon, time = self.extract_coordinates(year)
 
         self.data = xr.Dataset(
-            {f"{self.SPECIES}": (["lat", "lon", "time"], CO_flux)},
+            {f"{self.SPECIES}": (["lat", "lon", "time"], CO_flux)}, # NOTE you'll need to change dimensions to lat, lon, month, source
             coords={"lon": lon, "lat": lat, "time": time}
         )
 
